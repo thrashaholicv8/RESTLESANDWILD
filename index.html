@@ -182,8 +182,9 @@
     transform: translateX(7.5%);
   }
 }
-  .waterline-wrap{
+.waterline-wrap{
   width: 100%;
+  height: 38px;
   overflow: hidden;
   line-height: 0;
 }
@@ -191,22 +192,23 @@
 .waterline-wrap svg{
   display: block;
   width: 110%;
-  height: 35px;
-  transform: translateX(-6.5%);
+  height: 38px;
+  position: relative;
+  left: -5%;
+  top: 5px;
+  animation: waterlineDrift 12s ease-in-out infinite alternate;
 }
 
 .waterline-wrap path{
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: waterlineDrift 12s ease-in-out infinite alternate;
+  opacity: 0.85;
 }
 
 @keyframes waterlineDrift{
   from{
-    transform: translateX(-6.5%);
+    transform: translateX(-1.5%);
   }
   to{
-    transform: translateX(6.5%);
+    transform: translateX(1.5%);
   }
 }
   .line-reveal{ clip-path: inset(0 80% 0 0); transition: clip-path 2.2s cubic-bezier(.22,1,.36,1); }
