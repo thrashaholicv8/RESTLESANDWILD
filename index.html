@@ -133,19 +133,55 @@
   }
   .hero-contours{ position: absolute; inset: 0; bottom: -10%; z-index: 0; opacity: 0.14; pointer-events: none; }
   .hero-contours svg{ width: 100%; height: 100%; }
-  .hero-waves{
-    position:absolute; left:0; right:0; bottom:0; height:clamp(150px, 22vh, 250px);
-    z-index:0; opacity:.30; pointer-events:none; overflow:hidden;
+ .hero-waves{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: clamp(115px, 17vh, 190px);
+  z-index: 0;
+  opacity: .34;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-waves svg{
+  width: 115%;
+  height: 100%;
+  display: block;
+  transform: translateX(-7.5%);
+}
+
+.hero-wave{
+  fill: none;
+  stroke: #e8a23d;
+  stroke-width: 1.25;
+  vector-effect: non-scaling-stroke;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: waveDrift 9s ease-in-out infinite alternate;
+}
+
+.hero-wave.w2{
+  opacity: .62;
+  animation-duration: 12s;
+  animation-delay: -4s;
+}
+
+.hero-wave.w3{
+  opacity: .38;
+  animation-duration: 15s;
+  animation-delay: -8s;
+}
+
+@keyframes waveDrift{
+  from{
+    transform: translateX(-5%);
   }
-  .hero-waves svg{ width:110%; height:100%; display:block; transform:translateX(-5%); }
-  .hero-wave{ fill:none; stroke:#e8a23d; stroke-width:1.25; vector-effect:non-scaling-stroke;
-    transform-box:fill-box; transform-origin:center; animation:waveDrift 11s ease-in-out infinite alternate; }
-  .hero-wave.w2{ opacity:.65; animation-duration:15s; animation-delay:-3s; }
-  .hero-wave.w3{ opacity:.38; animation-duration:19s; animation-delay:-7s; }
-  @keyframes waveDrift{
-    from{ transform:translateX(-2.5%); }
-    to{ transform:translateX(2.5%); }
+  to{
+    transform: translateX(5%);
   }
+}
   .waterline-wrap{ width: 100%; overflow: hidden; line-height: 0; }
   .waterline-wrap svg{ display: block; width: 100%; height: 30px; }
   .line-reveal{ clip-path: inset(0 100% 0 0); transition: clip-path 2.2s cubic-bezier(.22,1,.36,1); }
