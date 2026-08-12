@@ -182,8 +182,33 @@
     transform: translateX(7.5%);
   }
 }
-  .waterline-wrap{ width: 100%; overflow: hidden; line-height: 0; }
-  .waterline-wrap svg{ display: block; width: 100%; height: 30px; }
+  .waterline-wrap{
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.waterline-wrap svg{
+  display: block;
+  width: 110%;
+  height: 30px;
+  transform: translateX(-5%);
+}
+
+.waterline-wrap path{
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: waterlineDrift 12s ease-in-out infinite alternate;
+}
+
+@keyframes waterlineDrift{
+  from{
+    transform: translateX(-1.5%);
+  }
+  to{
+    transform: translateX(1.5%);
+  }
+}
   .line-reveal{ clip-path: inset(0 100% 0 0); transition: clip-path 2.2s cubic-bezier(.22,1,.36,1); }
   .line-reveal.in{ clip-path: inset(0 0 0 0); }
   .hero-eyebrow, .hero-title, .hero-sub, .hero-meta{ position:relative; z-index:1; }
